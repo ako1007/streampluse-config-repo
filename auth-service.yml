@@ -31,7 +31,7 @@ eureka:
     fetch-registry: true
 
 jwt:
-  secret: "SuperSecretKeyStreamPluse123456789"
+  secret: "dbfe01982367482949bcef6ff02bf67d"
   expiration: 86400000  # 24 часа
   
 logging:
