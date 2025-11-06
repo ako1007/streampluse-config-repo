@@ -14,18 +14,11 @@ spring:
 
       routes:
         - id: auth-service
-          uri: lb://AUTH-SERVICE
+          uri: lb://auth-service
           predicates:
             - Path=/api/v1/auth/**
           filters:
-            - JwtAuthFilter
-
-        - id: user-service
-          uri: lb://USER-SERVICE
-          predicates:
-            - Path=/api/users/**
-          filters:
-            - JwtAuthFilter
+            - name: JwtAuthFilter  # 👈 фильтр
 
 jwt:
   secret: "dbfe01982367482949bcef6ff02bf67d"
@@ -33,4 +26,4 @@ jwt:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka/
