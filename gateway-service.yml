@@ -31,7 +31,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8081  # auth-service JWT endpoin
+          issuer-uri: http://localhost:8082  # auth-service JWT endpoin
 jwt:
   secret: "dbfe01982367482949bcef6ff02bf67d"
 
