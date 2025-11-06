@@ -16,12 +16,6 @@ spring:
       ddl-auto: update
     show-sql: true
 
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: config-server
-
 eureka:
   client:
     service-url:
@@ -31,7 +25,7 @@ eureka:
 
 jwt:
   secret: "dbfe01982367482949bcef6ff02bf67d"
-  expiration: 86400000  # 24 часа
+  expiration: 86400000
 
 logging:
   level:
