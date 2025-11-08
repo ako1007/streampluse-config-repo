@@ -8,7 +8,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          public-key-location: classpath:public.pem
+          secret-key: dbfe01982367482949bcef6ff02bf67d
   cloud:
     gateway:
       discovery:
