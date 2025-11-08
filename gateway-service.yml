@@ -4,7 +4,11 @@ server:
 spring:
   application:
     name: gateway-service
-
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          public-key-location: classpath:public.pem
   cloud:
     gateway:
       discovery:
