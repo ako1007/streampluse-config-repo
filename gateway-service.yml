@@ -14,7 +14,6 @@ spring:
           filters:
             - name: JwtAuthFilter
 
-
 jwt:
   secret: "dbfe01982367482949bcef6ff02bf67d"
 
