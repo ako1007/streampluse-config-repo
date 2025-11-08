@@ -25,7 +25,7 @@ eureka:
 
 jwt:
   secret: "dbfe01982367482949bcef6ff02bf67d"
-  expiration: 86400000
+  expiration: 86400000   # 24 hours
 
 logging:
   level:
