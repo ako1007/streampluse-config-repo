@@ -16,9 +16,17 @@ spring:
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/api/v1/auth/**
+            - Path=/api/v1/auth/**  
+          # ❌ убираем фильтр для публичных путей
           # filters:
-            # - name: JwtAuthFilter
+          #   - name: JwtAuthFilter
+
+        - id: other-service
+          uri: lb://other-service
+          predicates:
+            - Path=/api/v1/other/**  
+          filters:
+            - name: JwtAuthFilter  # защищённые маршруты
 
 jwt:
   secret: "dbfe01982367482949bcef6ff02bf67d"
