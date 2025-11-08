@@ -4,7 +4,6 @@ server:
 spring:
   application:
     name: gateway-service
-
   cloud:
     gateway:
       routes:
@@ -13,7 +12,7 @@ spring:
           predicates:
             - Path=/api/v1/auth/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=2   # было 1 → ставим 2
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin, RETAIN_FIRST
           # filters:
