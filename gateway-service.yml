@@ -4,11 +4,7 @@ server:
 spring:
   application:
     name: gateway-service
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          secret-key: dbfe01982367482949bcef6ff02bf67d
+
   cloud:
     gateway:
       discovery:
@@ -22,7 +18,7 @@ spring:
           predicates:
             - Path=/api/v1/auth/**
           filters:
-            - name: JwtAuthFilter  # 👈 фильтр
+            - name: JwtAuthFilter
 
 jwt:
   secret: "dbfe01982367482949bcef6ff02bf67d"
