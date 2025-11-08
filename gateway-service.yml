@@ -8,22 +8,12 @@ spring:
     gateway:
       routes:
         - id: auth-service
-          uri: lb://AUTH-SERVICE
+          uri: http://localhost:8082
           predicates:
             - Path=/api/v1/auth/**
           filters:
-            - StripPrefix=2   # было 1 → ставим 2
-      default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Origin, RETAIN_FIRST
-          # filters:
-          #   - name: JwtAuthFilter
+            - name: JwtAuthFilter
 
-        # - id: other-service
-        #   uri: lb://other-service
-        #   predicates:
-        #     - Path=/api/v1/other/**  
-        #   filters:
-        #     - name: JwtAuthFilter  # защищённые маршруты
 
 jwt:
   secret: "dbfe01982367482949bcef6ff02bf67d"
